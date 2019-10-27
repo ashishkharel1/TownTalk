@@ -1,0 +1,49 @@
+https://3000-dot-9011213-dot-devshell.appspot.com/name?firstname=My%20name%20is%20trump
+
+gcloud ml language analyze-entities --content="President Trump will speak from the White House, located in chicago"
+
+
+print(os.system('ls -l'
+
+))
+
+
+gcloud config set project tidy-reporter-257118
+
+
+
+
+
+
+
+
+from __future__ import print_function
+import subprocess
+import commands
+
+import sys
+import os
+import json
+from ortools.sat.python import cp_model
+import requests 
+API_ENDPOINT = "https://us-central1-friday-254302.cloudfunctions.net/firstFunction/api/employeealgo"
+
+
+
+def main():
+    # This program tries to find an optimal assignment of nurses to shifts
+    # (3 shifts per day, for 7 days), subject to some constraints (see below).
+    # Each nurse can request to be assigned to specific shifts.
+    # The optimal assignment maximizes the number of fulfilled shift requests.
+    #num_nurses = 5
+    #print(sys.argv[1])
+    #output=os.system('gcloud ml language analyze-entities --content="' + sys.argv[1] + '"')
+    #proc = subprocess.Popen(["cat", "/etc/services"], stdout=subprocess.PIPE, shell=True)
+    output = commands.getstatusoutput('gcloud ml language analyze-entities --content="' + sys.argv[1] + '"')
+    #print(output)
+    tup_list = list(output)
+    print(tup_list[1])
+
+
+if __name__ == '__main__':
+    main()
